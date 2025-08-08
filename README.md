@@ -1,101 +1,100 @@
-# 👁️ سیستم تشخیص خواب‌آلودگی چشم به صورت زنده
+# 👁️ Real-Time Eye Drowsiness Detection System
 
-یک **سیستم هوشمند بلادرنگ** برای تشخیص خواب‌آلودگی و خستگی چشم با استفاده از **شبکه‌های عصبی کانولوشنی (CNN)** و **کتابخانه OpenCV**.  
-هنگامی که سیستم تشخیص دهد چشم‌ها برای مدتی طولانی بسته مانده‌اند، یک **صدای هشدار** پخش می‌کند تا به کاربر هشدار دهد. این پروژه همچنین دارای یک **رابط وب** برای نظارت از راه دور است.
-
----
-
-## ✨ ویژگی‌های کلیدی
-
-- 🎯 **تشخیص بلادرنگ** با استفاده از OpenCV و Haar Cascade
-- 🧠 **مدل CNN** آموزش‌دیده بر روی دیتاست تصاویر چشم‌های باز و بسته
-- 🔊 **پخش صدای هشدار** هنگامی که چشم‌ها برای مدتی بسته بمانند
-- 🌐 **رابط وب Flask** با قابلیت پخش زنده ویدیو
-- 📊 **سیستم امتیازدهی** برای کاهش هشدارهای کاذب
-- 🖥️ سازگار با **دوربین‌های محلی** (وب‌کم لپ‌تاپ یا USB)
+A **real-time AI-powered system** for detecting eye drowsiness and fatigue using **Convolutional Neural Networks (CNN)** and the **OpenCV library**.
+When the system detects that the eyes have been closed for an extended period, it plays an **alarm sound** to alert the user. This project also features a **web interface** for remote monitoring.
 
 ---
 
-## 🛠️ تکنولوژی‌های استفاده شده
+## ✨ Key Features
 
-- **Python**: زبان اصلی برنامه‌نویسی
-- **TensorFlow/Keras**: برای ساخت و آموزش مدل یادگیری عمیق
-- **OpenCV**: برای پردازش تصویر و تشخیص چهره و چشم در زمان واقعی
-- **Flask**: برای ساخت رابط کاربری وب و پخش زنده ویدیو
-- **Pygame**: برای پخش صدای هشدار
-- **Numpy**: برای عملیات عددی روی تصاویر
+- 🎯 **Real-time detection** using OpenCV and Haar Cascades
+- 🧠 **CNN model** trained on a dataset of open and closed eye images
+- 🔊 **Alarm sound** triggers when eyes remain closed for too long
+- 🌐 **Flask web interface** with live video streaming
+- 📊 **Score-based system** to reduce false positives
+- 🖥️ Compatible with **local cameras** (built-in webcam or USB)
 
 ---
 
-## 🚀 نصب و راه‌اندازی
+## 🛠️ Tech Stack
 
-برای اجرای این پروژه، مراحل زیر را دنبال کنید:
+- **Python**: The core programming language
+- **TensorFlow/Keras**: For building and training the deep learning model
+- **OpenCV**: For real-time image processing and face/eye detection
+- **Flask**: For building the web interface and live video streaming
+- **Pygame**: For playing the alarm sound
+- **Numpy**: For numerical operations on images
 
-**۱. کلون کردن ریپازیتوری:**
+---
+
+## 🚀 Installation and Setup
+
+Follow these steps to run the project:
+
+**1. Clone the Repository:**
 ```bash
 git clone https://github.com/your-username/drowsiness-detection.git
 cd drowsiness-detection
 ```
-*(نکته: `your-username` را با نام کاربری خود جایگزین کنید)*
+*(Note: Replace `your-username` with your actual username)*
 
-**۲. نصب نیازمندی‌ها:**
-توصیه می‌شود که یک محیط مجازی (virtual environment) برای ایزوله کردن پکیج‌ها ایجاد کنید.
+**2. Install Dependencies:**
+It is recommended to create a virtual environment to isolate the packages.
 ```bash
 python -m venv venv
-source venv/bin/activate  # در ویندوز: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
-سپس، نیازمندی‌های پروژه را با دستور زیر نصب کنید:
+Then, install the required packages using the following command:
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🔧 راهنمای استفاده
+## 🔧 Usage
 
-این پروژه به دو روش قابل اجرا است:
+This project can be run in two ways:
 
-**۱. اجرای نسخه مستقل (Standalone):**
-این نسخه به صورت مستقیم تصویر وب‌کم شما را در یک پنجره نمایش می‌دهد. برای اجرای آن، دستور زیر را در ترمینال وارد کنید:
+**1. Standalone Mode:**
+This mode displays the webcam feed directly in a window on your desktop. To run it, enter the following command in your terminal:
 ```bash
 python "drowsiness detection.py"
 ```
-برای خروج از برنامه، کلید `q` را فشار دهید.
+Press the `q` key to quit the application.
 
-**۲. اجرای نسخه وب (Web Application):**
-این نسخه یک رابط کاربری وب راه‌اندازی می‌کند که می‌توانید از طریق مرورگر به آن دسترسی داشته باشید. برای اجرای سرور Flask، از دستور زیر استفاده کنید:
+**2. Web Application Mode:**
+This mode launches a web interface that you can access from your browser. To start the Flask server, use this command:
 ```bash
 python app.py
 ```
-سپس مرورگر خود را باز کرده و به آدرس `http://127.0.0.1:5000` بروید تا پخش زنده را مشاهده کنید.
+Then, open your browser and navigate to `http://127.0.0.1:5000` to see the live stream.
 
 ---
 
-## 🗂 ساختار پروژه
+## 🗂 Project Structure
 
 ```
 EYE-DETECTION/
 │
-├── data/                  # دیتاست تصاویر برای آموزش و اعتبارسنجی
+├── data/                  # Image dataset for training and validation
 │   ├── train/
 │   └── valid/
 │
-├── haar cascade files/    # فایل‌های طبقه‌بندی کننده Haarcascade
+├── haar cascade files/    # Haar Cascade classifier files
 │   ├── haarcascade_frontalface_alt.xml
 │   ├── haarcascade_lefteye_2splits.xml
 │   └── haarcascade_righteye_2splits.xml
 │
-├── models/                # مدل آموزش‌دیده CNN
+├── models/                # Trained CNN model
 │   └── cnnCat2.h5
 │
-├── templates/             # قالب‌های HTML برای Flask
+├── templates/             # HTML templates for Flask
 │   └── index.html
 │
-├── alarm.wav              # فایل صوتی هشدار
-├── app.py                 # اسکریپت اصلی اپلیکیشن وب Flask
-├── drowsiness detection.py # اسکریپت مستقل برای تشخیص خواب‌آلودگی
-├── model.py               # اسکریپت آموزش مدل
-├── requirements.txt       # نیازمندی‌های پایتون
-└── README.md              # مستندات پروژه (همین فایل)
+├── alarm.wav              # Alarm sound file
+├── app.py                 # Main script for the Flask web application
+├── drowsiness detection.py # Standalone script for drowsiness detection
+├── model.py               # Script for training the model
+├── requirements.txt       # Python dependencies
+└── README.md              # Project documentation (this file)
 ```
-
