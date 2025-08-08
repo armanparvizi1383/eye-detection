@@ -19,4 +19,32 @@ Includes a **Flask web interface** for remote monitoring.
 
 ## 🗂 Project Structure
 
+EYE-DETECTION/
+│
+├── data/ # Dataset (train & validation images)
+│ ├── train/
+│ │ ├── closed/
+│ │ └── open/
+│ └── valid/
+│ ├── closed/
+│ └── open/
+│
+├── haar cascade files/ # Haarcascade XML classifiers
+│ ├── haarcascade_frontalface_alt.xml
+│ ├── haarcascade_lefteye_2splits.xml
+│ └── haarcascade_righteye_2splits.xml
+│
+├── models/ # Trained CNN models
+│ └── cnnCat2.h5
+│
+├── templates/ # Flask HTML templates
+│ └── index.html
+│
+├── alarm.wav # Alarm sound
+├── app.py # Flask web app
+├── drowsiness detection.py # Standalone detection script
+├── model.py # Model training script
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
+
 
