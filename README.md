@@ -103,6 +103,7 @@ EYE-DETECTION/
 
 ## 📸 Demo
 
-![Drowsiness Detection Demo](demo.gif)
+![Drowsiness Detection Demo](demo.gif/demo.gif)
+
 
 
