@@ -98,3 +98,10 @@ EYE-DETECTION/
 ├── requirements.txt       # Python dependencies
 └── README.md              # Project documentation (this file)
 ```
+
+
+
+## 📸 Demo
+
+![Drowsiness Detection Demo](demo.gif)
+
